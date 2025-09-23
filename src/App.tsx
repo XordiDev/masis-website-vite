@@ -1,12 +1,11 @@
 import './App.css'
+import Home from './pages/home'
 
 function App() {
 
   return (
     <>
-      <h1 className=''>
-        Hola Mundo
-      </h1>
+    <Home />
     </>
   )
 }
