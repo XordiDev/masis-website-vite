@@ -1,14 +1,17 @@
 import Button from "../components/Button";
-
+import Layout from "../components/layout/Layout";
 
 const Home = () => {
-    return (
-        <div>
-            <h1 className="text-3xl">Hola Mundo</h1>
-            <Button/>
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <Layout>
+        <section className="flex flex-col items-center justify-center h-[80vh] text-center">
+          <h1 className="text-4xl font-bold mb-6">🚀 Hola Mundo</h1>
+          <Button />
+        </section>
+      </Layout>
+    </div>
+  );
+};
 
 export default Home;
