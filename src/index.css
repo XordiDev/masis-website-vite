@@ -1,4 +1,14 @@
+@font-face {
+  font-family: Jakarta;
+  src: url("./assets/fonts/PlusJakartaSans-Medium.ttf"
+  );
+}
+
 @import "tailwindcss";
+
+@theme{
+  --font-jakarta: Jakarta, "sans-serif";
+}
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
