@@ -5,9 +5,9 @@ const Navbar = () => {
 
   const links = [
     { id: "home", label: "Home" },
-    { id: "features", label: "Nosotros" },
-    { id: "assets", label: "Productos" },
-    { id: "pricing", label: "Contáctanos" },
+    { id: "aboutus", label: "Nosotros" },
+    { id: "products", label: "Productos" },
+    { id: "contactus", label: "Contáctanos" },
   ];
   //Generacion dinamica de los links para aplicar los efectos dependiendo de la seccion
   return (
