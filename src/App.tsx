@@ -1,10 +1,13 @@
 import "./App.css";
-import Home from "./pages/home";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home.tsx";
 
 function App() {
   return (
     <>
-      <Home />
+      <Layout>
+        <Home />
+      </Layout>
     </>
   );
 }
