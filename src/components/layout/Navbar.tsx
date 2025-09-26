@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -9,10 +10,23 @@ const Navbar = () => {
     { id: "products", label: "Productos" },
     { id: "contactus", label: "Contáctanos" },
   ];
+
+  const handleClick = (e: React.MouseEvent) => {
+    console.log(e)
+  }
+
   //Generacion dinamica de los links para aplicar los efectos dependiendo de la seccion
   return (
-    <nav className="w-full flex justify-center mt-6">
-      <ul className="flex gap-3 px-1 py-3 border border-gray-300 rounded-full font-medium text-lg">
+    <nav className="w-full flex justify-end bg-blue-800 p-3 lg:bg-transparent lg:mt-6 lg:w-full lg:flex lg:justify-center">
+      <button onClick={handleClick} className="border border-white p-2 mr-2 lg:hidden ">
+      <Menu color="#ffffff" />
+      </button>
+
+      <ul
+        className="
+      hidden lg:flex gap-3 px-1 py-3 border-2 border-gray-300 rounded-full font-medium
+      "
+      >
         {links.map((link) => (
           <li key={link.id}>
             <a
