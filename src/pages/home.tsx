@@ -1,15 +1,10 @@
-import Button from "../components/Button";
-import Layout from "../components/layout/Layout";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div>
-      <Layout>
-        <section className="flex flex-col items-center justify-center h-[80vh] text-center">
-          <h1 className="text-4xl font-bold mb-6">🚀 Hola Mundo</h1>
-          <Button />
-        </section>
-      </Layout>
+    <div id="home-page">
+        <Hero />
+
     </div>
   );
 };
