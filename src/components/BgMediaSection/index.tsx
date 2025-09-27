@@ -9,7 +9,6 @@ export type BgMediaSectionProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const VIDEO_REGEX = /\.(mp4|webm|ogg)$/i;
 const IMAGE_REGEX = /\.(jpe?g|png|webp|gif|svg)$/i;
 
 const BgMediaSection: React.FC<BgMediaSectionProps> = ({
@@ -21,11 +20,10 @@ const BgMediaSection: React.FC<BgMediaSectionProps> = ({
   ...rest
 }) => {
   const base = clsx(
-    "relative isolate flex items-center justify-center min-h-[600px] lg:h-[calc(100vh-7.5rem)] h-[calc(100vh-4rem)]",
+    "relative isolate flex items-center justify-center min-h-[600px] lg:h-[calc(100vh-5rem)] h-[calc(100vh-4rem)]",
     className
   );
 
-  const isVideo = VIDEO_REGEX.test(media);
   const isImage = IMAGE_REGEX.test(media);
 
   const mediaClasses = clsx(
@@ -35,17 +33,6 @@ const BgMediaSection: React.FC<BgMediaSectionProps> = ({
 
   return (
     <section className={base} {...rest}>
-      {isVideo && (
-        <video
-          src={media}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={mediaClasses}
-        />
-      )}
-
       {isImage && (
         <img
           src={media}
