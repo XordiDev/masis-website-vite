@@ -3,48 +3,56 @@ import Card from "../../components/Card";
 import { Binoculars, Bird, Sparkle } from "lucide-react";
 import Section from "../../components/Section";
 import Container from "../../components/Container";
+import { Subtitle, Title } from "../../components/Text";
 
 const items = [
   {
     icon: <Sparkle />,
     cardTitle: "Seguridad de la Información",
-    cardDescription:
-      "Protegemos los datos críticos de su empresa mediante soluciones avanzadas de ciberseguridad, garantizando confidencialidad, integridad y disponibilidad.",
+    cardList: [
+      "Evaluación de riesgos y vulnerabilidades",
+      "Implementación de políticas de seguridad",
+      "Capacitación en ciberseguridad para empleados",
+    ],
   },
   {
     icon: <Bird />,
-    cardTitle: "Segunda card",
+    cardTitle: "MISIÓN",
     cardDescription:
-      "Ofrecemos asesoramiento experto para optimizar su infraestructura tecnológica, mejorar procesos y adoptar las mejores prácticas en gestión de TI.",
+      "MASIS S.A.S. es una empresa vallecaucana, dedicada a la comercialización de servicios y productos para el procesamiento de la información, ofreciendo soluciones que satisfacen las necesidades de nuestros clientes y aumentan su productividad, buscando el bienestar de nuestros colaboradores, socios y la comunidad, generando empleo y protegiendo a la madre naturaleza.",
   },
   {
     icon: <Binoculars />,
-    cardTitle: "Consultoría en TI",
+    cardTitle: "VISIÓN",
     cardDescription:
-      "Ofrecemos asesoramiento experto para optimizar su infraestructura tecnológica, mejorar procesos y adoptar las mejores prácticas en gestión de TI.",
+      "Ser en el 2.026 una empresa líder EN EL VALLE DEL CAUCA en el soporte integral a micro, pequeñas y medianas empresas; reconocida en el mercado por el alto nivel profesional de su gente, la productividad de su organización, la calidad de sus servicios y productos y la investigación permanente de nuevas tecnologías y servicios.",
   },
   {
-    cardTitle: "Cuarta card",
-    cardDescription: "Descripción de la cuarta card",
-  }
+    icon: <Binoculars />,
+    cardTitle: "POLÍTICAS",
+    cardDescription: "En respuesta a los desafíos de la globalización, MASIS S.A.S busca el mejoramiento continuo, entrenamiento y motivación de su gente; optimizar su productividad para ser competitivos y lograr la consolidación en el mercado",
+  },
 ];
 
 type CardSectionProps = {
   title?: string;
   description?: string;
+  sectionId?: string;
 };
 
-const CardSection: React.FC<CardSectionProps> = ({ title, description }) => {
+const CardSection: React.FC<CardSectionProps> = ({
+  title,
+  description,
+  sectionId,
+}) => {
   return (
     <Section>
       <Container flex="static">
-        <div className="text-center">
-          <h1 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold mb-2">
-            {title}
-          </h1>
+        <div className="text-center" id={sectionId}>
+          <Title>{title}</Title>
         </div>
-        <p className="text-[clamp(1.2rem,0.95vw,1.5rem)]">{description}</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Subtitle>{description}</Subtitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           {React.Children.toArray(
             items.map((items, index) => (
               <div key={index} className="h-full">
