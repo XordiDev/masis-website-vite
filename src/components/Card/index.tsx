@@ -7,6 +7,8 @@ type CardProps = {
   cardDescription?: string | React.ReactNode;
   cardList?: string[];
   icon?: React.ReactNode;
+  image?: string; // Nueva prop para la imagen
+  imageAlt?: string; // Texto alternativo para accesibilidad
   className?: string;
   button?: string | React.ReactNode;
 };
@@ -16,10 +18,13 @@ const Card: React.FC<CardProps> = ({
   cardDescription,
   icon,
   cardList,
+  image,
+  imageAlt = "Product image",
   className = "",
   button,
 }) => {
   const showList = Array.isArray(cardList) && cardList.length > 0;
+  const hasImage = !!image;
 
   return (
     <div
@@ -30,8 +35,18 @@ const Card: React.FC<CardProps> = ({
     >
       {/* Contenido principal */}
       <div className="flex-1 flex flex-col items-center w-full">
-        {/* Icono */}
-        <div className="mb-4 flex justify-center text-4xl">{icon}</div>
+        {/* Icono o Imagen */}
+        <div className="mb-4 flex justify-center">
+          {hasImage ? (
+            <img 
+              src={image} 
+              alt={imageAlt}
+              className="w-16 h-16 object-contain" // Ajusta el tamaño según necesites
+            />
+          ) : (
+            <div className="text-4xl">{icon}</div>
+          )}
+        </div>
 
         {/* Título */}
         {cardTitle && (
