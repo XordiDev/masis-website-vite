@@ -50,7 +50,7 @@ const Card: React.FC<CardProps> = ({
             </ul>
           ) : (
             cardDescription && (
-              <Body className="text-left">{cardDescription}</Body>
+              <Body className="text-center">{cardDescription}</Body>
             )
           )}
         </div>

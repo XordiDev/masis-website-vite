@@ -6,6 +6,7 @@ import { HomeIcon, Users } from "lucide-react";
 import ServiceImage from "../assets/about_img.png";
 import AboutSection from "../sections/AboutSection";
 import OurServicesSection from "../sections/OurServicesSection";
+import ProductSection from "../sections/ProductSection";
 
 const CARDS = [
   {
@@ -50,6 +51,11 @@ Ofrecemos servicios de alta calidad, respaldados por un proceso continuo de mejo
       />
 
       <OurServicesSection
+        title="Nuestros servicios"
+        description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros productos y servicios."
+      />
+
+      <ProductSection
         title="Nuestros servicios"
         description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros productos y servicios."
       />
