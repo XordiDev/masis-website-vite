@@ -52,12 +52,12 @@ Ofrecemos servicios de alta calidad, respaldados por un proceso continuo de mejo
 
       <OurServicesSection
         title="Nuestros servicios"
-        description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros productos y servicios."
+        description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros servicios."
       />
 
       <ProductSection
-        title="Nuestros servicios"
-        description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros productos y servicios."
+        title="Ofrecemos los siguientes productos"
+        description="En MASIS SAS trabajamos con dedicación para darte la mejor atención y soluciones a la medida. Aquí encontrarás nuestros productos."
       />
     </div>
   );
