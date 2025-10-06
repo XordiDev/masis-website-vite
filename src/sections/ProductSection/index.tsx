@@ -1,9 +1,15 @@
 import React from "react";
+import endpointImg from "../../assets/products/antivirus.jpg"
+import firewallImg from "../../assets/products/firewall.jpg"
+import backupImg from "../../assets/products/backup.jpg"
+import laptopImg from "../../assets/products/portatildesktop.jpg"
+import computerPartsImg from "../../assets/products/componentes.jpg"
 import Section from "../../components/Section";
 import Container from "../../components/Container";
 import { Subtitle, Title } from "../../components/Text";
 import { Home } from "lucide-react";
 import Card from "../../components/Card";
+
 
 type ProductSectionProps = {
   title?: string;
@@ -12,39 +18,34 @@ type ProductSectionProps = {
 
 const items = [
   {
-    icon: <Home />,
+    image:endpointImg,
     cardTitle: "Antivirus para endpoints.",
     cardDescription:
       "Aumente la seguridad de los equipos de su empresa.",
-    button: "Saber Más",
   },
   {
-    icon: <Home />,
+    image:firewallImg,
     cardTitle: "Dispositivos firewall.",
     cardDescription:
       "Agregue una capa de seguridad adicional para la red de su negocio.",
-    button: "Saber Más",
   },
   {
-    icon: <Home />,
+    image:backupImg,
     cardTitle: "Soluciones de backup y contingencia.",
     cardDescription:
       "En casos de fallos de seguridad tenga siempre disponible su información y no interrumpa su operación",
-    button: "Saber Más",
   },
   {
-    icon: <Home />,
+    image:computerPartsImg,
     cardTitle: "Componentes para computador.",
     cardDescription:
       "Adquiera con nosotros diademas, teclados, monitores y más",
-    button: "Saber Más",
   },
   {
-    icon: <Home />,
+    image:laptopImg,
     cardTitle: "Equipos desktop y portatiles.",
     cardDescription:
       "Cotice con nosotros la compra de sus equipos",
-    button: "Saber Más",
   }
 ];
 
@@ -64,7 +65,11 @@ const ProductSection: React.FC<ProductSectionProps> = ({
             {React.Children.toArray(
               items.map((items, index) => (
                 <div key={index} className="h-full">
-                  <Card {...items} />
+                  <Card 
+                    cardImage={items.image}
+                    cardTitle={items.cardTitle}
+                    cardDescription={items.cardDescription}
+                  />
                 </div>
               ))
             )}
